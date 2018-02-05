@@ -1,0 +1,112 @@
+[
+	{
+		"question" : "What does PHP stand for?",
+		"choix":
+			[
+				{
+					"contenu": "Personnal Hypertext Preprocessor",
+					"isCorrect": false
+				},
+				{
+					"contenu" : "Hypertext Preprocessor",
+					"isCorrect": true
+				},
+				{
+					"contenu" : "Private Home Page",
+					"isCorrect": false
+				},
+				{
+					"contenu" : "Personnal Home Page",
+					"isCorrect": false
+				}
+			]
+	},
+	{
+		"question" : "Do you write \"Hello World\" in PHP?",
+		"choix":
+			[
+				{
+					"contenu" : "print(\"Hello World\")",
+					"isCorrect" : false
+				},
+				{
+					"contenu" : "Document.Write(\"Hello World\");",
+					"isCorrect" : false
+				},
+				{
+					"contenu": "echo \"Hello World\";",
+					"isCorrect": true
+				},
+				{
+					"contenu" : "\"Hello World\"",
+					"isCorrect": false
+				}
+			]
+	},
+	{
+		"question" : "How do you declare variable a in PHP?",
+		"choix":
+			[
+				{
+					"contenu": "$a = 0;",
+					"isCorrect": true
+				},
+				{
+					"contenu" : "var a = 0;",
+					"isCorrect": false
+				},
+				{
+					"contenu" : "a = 0",
+					"isCorrect": false
+				},
+				{
+					"contenu" : "int a = 0",
+					"isCorrect": false
+				}
+			]
+	},
+	{
+		"question" : "How to declare a constructor in PHP?",
+		"choix":
+			[
+				{
+					"contenu": "public function construct(){}",
+					"isCorrect": false
+				},
+				{
+					"contenu": "public function __constructor(){}",
+					"isCorrect": false
+				},
+				{
+					"contenu": "public function construct__(){}",
+					"isCorrect": false
+				},
+				{
+					"contenu": "public function __construct(){}",
+					"isCorrect": true
+				}
+			]
+	},
+	{
+		"question" : "How to declare a destructor in PHP?",
+		"choix":
+			[
+				{
+					"contenu": "public function __destruct(){}",
+					"isCorrect": true
+				},
+				{
+					"contenu": "public function __destructor(){}",
+					"isCorrect": false
+				},
+				{
+					"contenu": "public function destruct(){}",
+					"isCorrect": false
+				},
+				{
+					"contenu": "public function destruct__(){}",
+					"isCorrect": false
+				}
+			]
+	}
+]
