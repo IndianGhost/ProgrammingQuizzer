@@ -1,12 +1,9 @@
-<?php
-#session, cookies, ip adress ...etc will be added
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="BELLAALI Achraf" />
 
@@ -75,10 +72,10 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#html">HTML</a></li>
+            <li class="active"><a href="#html">HTML</a></li>
             <li><a href="#css">CSS</a></li>
             <li><a href="#javascript">JavaScript</a></li>
-            <li class="active"><a href="#">PHP</a></li>
+            <li><a href="#php">PHP</a></li>
             <li><a href="#python">Python</a></li>
             <li><a href="#sql">SQL</a></li>
             <li><a href="#c">C</a></li>
@@ -95,38 +92,23 @@
         <p class="lead">ipsum lorem dolor sit amet ipsum lorem dolor sit amet.<br> ipsum lorem dolor sit ametipsum lorem dolor sit ametipsum lorem dolor sit amet.</p>
       </div>
 
-      <div class="row">
-      	<div class="col-lg-offset-4 col-lg-4 col-sm-12 col-xs-12 js-question">
-      	</div>
-      </div>
-      <div class="row">
-      	<div class="col-lg-offset-4 col-lg-4 col-sm-12 col-xs-12 js-choix">
-      		<input type="checkbox" class="choix" name="ipsum">ipsum lorem dolor sit amet<br/>
-      	</div>
-      </div>
-      <div class="row">
-      	<div class="col-lg-offset-4 col-lg-4 col-sm-12 col-xs-12">
-      		<input type="submit" name="send" value="Send"/>
-      	</div>
-      </div>
-
-      <div class="panel panel-primary">
+    <div class="panel panel-primary">
       <div class="panel-heading">
-        <h1 class="panel-title">ipsum Quizz</h1>
+        <h1 class="panel-title">HTML Quizz</h1>
       </div>
       <div id="html"></div>
     </div>
 
     <div class="panel panel-primary">
       <div class="panel-heading">
-        <h1 class="panel-title">ipsum Quizz</h1>
+        <h1 class="panel-title">CSS Quizz</h1>
       </div>
       <div id="css"></div>
     </div>
 
     <div class="panel panel-primary">
       <div class="panel-heading">
-        <h1 class="panel-title">ipsum Quizz</h1>
+        <h1 class="panel-title">JAVASCRIPT Quizz</h1>
       </div>
       <div id="javascript"></div>
     </div>
@@ -140,14 +122,14 @@
 
     <div class="panel panel-primary">
       <div class="panel-heading">
-        <h1 class="panel-title">ipsum Quizz</h1>
+        <h1 class="panel-title">PYTHON Quizz</h1>
       </div>
       <div id="python"></div>
     </div>
 
     <div class="panel panel-primary">
       <div class="panel-heading">
-        <h1 class="panel-title">ipsum Quizz</h1>
+        <h1 class="panel-title">SQL Quizz</h1>
       </div>
       <div id="sql"></div>
     </div>
@@ -178,5 +160,29 @@
     <script src="js/ie10-viewport-bug-workaround.js"></script>
     <!-- Read data from json files -->
     <script type="text/javascript" src="js/readData.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#navbar li').click(function(e){
+          $('#navbar li.active').removeClass('active');
+          var $this = $(this);
+          if (!$this.hasClass('active')) {
+            $this.addClass('active');
+          }
+          e.preventDefault;
+        });
+
+      //   $('a[href*=#]').click(function() {
+      //     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+      //       && location.hostname == this.hostname) {
+      //        var $target = $(this.hash);
+      //        $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+      //        if ($target.length) {
+      //            $target.ScrollTo(400);
+      //            return false;
+      //        }
+      //     };
+      //   });
+      });
+    </script>
   </body>
 </html>
