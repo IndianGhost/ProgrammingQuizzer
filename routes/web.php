@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Main\HomeController@index')
+    ->name('home_route');
+
+//Route::get('/quizz', function () {
+//    return view('Main.quizz');
+//})->name('quizz_route');
+
+Route::get('/quizz/{id}', 'Main\HomeController@quizz')
+    ->where('id', '[0-9]+')
+    ->name('quizz_route');
