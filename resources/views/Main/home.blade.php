@@ -14,104 +14,25 @@
 
 @section('content')
     <ul id="sortable">
-        <li>
-            <div class="media">
-                <div class="media-left align-self-center">
-                    <img class="rounded-circle" src="img/html.png"/>
+
+        @foreach($quizzes as $array)
+            <li>
+                <div class="media">
+                    <div class="media-left align-self-center">
+                        <img class="rounded-circle" src="{{$array['logo']}}"/>
+                    </div>
+                    <div class="media-body">
+                        <h4>{{$array['language']}} Quizz</h4>
+                        <p>
+                            {{$array['description']}}
+                        </p>
+                    </div>
+                    <div class="media-right align-self-center">
+                        <a href="{{route('quizz_route', ['id' => 1])}}" class="btn btn-default">Start Now</a>
+                    </div>
                 </div>
-                <div class="media-body">
-                    <h4>HTML Quizz</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                </div>
-                <div class="media-right align-self-center">
-                    <a href="html_quizz.html" target="_blank" class="btn btn-default">Start Now</a>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="media">
-                <div class="media-left align-self-center">
-                    <img class="rounded-circle" src="img/css.png"/>
-                </div>
-                <div class="media-body">
-                    <h4>CSS Quizz</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                </div>
-                <div class="media-right align-self-center">
-                    <a href="#" class="btn btn-default">Start Now</a>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="media">
-                <div class="media-left align-self-center">
-                    <img class="rounded-circle" src="img/javascript.png"/>
-                </div>
-                <div class="media-body">
-                    <h4>Javascript Quizz</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                </div>
-                <div class="media-right align-self-center">
-                    <a href="#" class="btn btn-default">Start Now</a>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="media">
-                <div class="media-left align-self-center">
-                    <img class="rounded-circle" src="img/php.png"/>
-                </div>
-                <div class="media-body">
-                    <h4>PHP Quizz</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                </div>
-                <div class="media-right align-self-center">
-                    <a href="#" class="btn btn-default">Start Now</a>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="media">
-                <div class="media-left align-self-center">
-                    <img class="rounded-circle" src="img/python.png"/>
-                </div>
-                <div class="media-body">
-                    <h4>PYTHON Quizz <span class="badge badge-secondary">New</span></h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                </div>
-                <div class="media-right align-self-center">
-                    <a href="#" class="btn btn-default">Start Now</a>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="media">
-                <div class="media-left align-self-center">
-                    <img class="rounded-circle" src="img/c.png"/>
-                </div>
-                <div class="media-body">
-                    <h4>C PROGRAMMING LANGUAGE Quizz <span class="badge badge-secondary">New</span></h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                </div>
-                <div class="media-right align-self-center">
-                    <a href="#" class="btn btn-default">Start Now</a>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="media">
-                <div class="media-left align-self-center">
-                    <img class="rounded-circle" src="img/sql.png"/>
-                </div>
-                <div class="media-body">
-                    <h4>SQL Quizz <span class="badge badge-secondary">New</span></h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                </div>
-                <div class="media-right align-self-center">
-                    <a href="#" class="btn btn-default">Start Now</a>
-                </div>
-            </div>
-        </li>
+            </li>
+        @endforeach
     </ul>
 @endsection
 

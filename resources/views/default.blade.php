@@ -19,7 +19,7 @@
         <div class="row">
             <h2 class="text-center">
 			    	<span>
-			    		<a href="index.html" class="link--nodecoration">Programming Quizz</a>
+			    		<a href="{{route('home_route')}}" class="link--nodecoration">Programming Quizz</a>
 			    	</span>Developed by <i class="fa fa-github"></i> <a href="https://www.github.com/IndianGhost" target="_blank" title="Visit my profile on Github !">ACHRAF BELLAALI</a>
             </h2>
         </div>
