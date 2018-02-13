@@ -14,10 +14,10 @@
 Route::get('/', 'Main\HomeController@index')
     ->name('home_route');
 
-//Route::get('/quizz', function () {
-//    return view('Main.quizz');
-//})->name('quizz_route');
-
-Route::get('/quizz/{id}', 'Main\HomeController@quizz')
-    ->where('id', '[0-9]+')
+Route::get('/quizz/{language}', 'Main\HomeController@quizz')
+    ->where('language', '[a-zA-Z]+')
     ->name('quizz_route');
+
+Route::post('/answers/{language}', 'Main\ScoreController@answers')
+    ->where('language', '[a-zA-Z]+')
+    ->name('answers_route');

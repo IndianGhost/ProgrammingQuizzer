@@ -4,14 +4,10 @@
     <title>@yield('title')</title>
     <meta charset="utf-8"/>
     <meta name="author" content="Achraf bellaali"/>
-
-    <!-- CDN bootstrap 4 -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
-
     <!-- CDN bootstrap material design -->
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <!-- Customized style -->
+    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}"/>
 </head>
 <body>
 <section class="row-section">
@@ -28,7 +24,7 @@
             @yield('content')
 
             <div class="card card--item bg-dark text-white">
-                <img class="card-img" src="img/author.jpg" alt="Card image">
+                <img class="card-img" src="{{asset('img/author.jpg')}}" alt="Card image">
                 <div class="card-img-overlay">
                     <h5 class="card-title">About Author</h5>
                     <p class="card-text">

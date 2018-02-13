@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Main;
 
+use App\Choice;
 use App\Question;
 use App\Quizz;
 use Illuminate\Http\Request;
@@ -11,13 +12,30 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $quizzes = Quizz::get()->toArray();
-        return view('Main.home', compact('quizzes'));
+//        $quizzes = Quizz::get()->toArray();
+        $quizzes = Quizz::where('id', '!=', null)
+            ->orderBy('id', 'desc')
+            ->get();
+        $new_quizzes = count($quizzes) - 3;
+        return view('Main.home', compact('quizzes', 'new_quizzes'));
     }
 
-    public function quizz($id)
+    public function quizz($language)
     {
-        $quizz = Quizz::get()->where('id', $id);
-        $questions = Question::get();
+        $quizz = Quizz::where(strtolower('language'), strtolower($language))
+            ->get()
+            ->toArray();
+        $quizz = $quizz[0];
+        $questions = Question::where('quizz_id', $quizz["id"])
+            ->get()
+            ->toArray();
+        $choices[] = null;
+        foreach ($questions as $i => $question)
+        {
+            $choice = Choice::where('question_id', $question['id'])
+                ->get();
+            $choices[$i] = $choice;
+        }
+        return view('Main.quizz', compact('quizz', 'questions', 'choices'));
     }
 }
