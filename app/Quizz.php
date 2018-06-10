@@ -27,6 +27,12 @@ class Quizz extends Model
      */
     protected $fillable = ['language', 'description', 'logo'];
 
+    public static $rules = [
+        'language'      =>  'required',
+        'description'   =>  'required',
+        'logo'          =>  'required'
+    ];
+
     public function question()
     {
         return $this->hasMany('App\Question');

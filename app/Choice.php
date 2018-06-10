@@ -27,6 +27,12 @@ class Choice extends Model
      */
     protected $fillable = ['content', 'isCorrect', 'question_id'];
 
+    public static $rules = [
+        'content'       =>  'required',
+        'isCorrect'     =>  'required|numeric|min:0|max:1',
+        'question_id'   =>  'required|numeric|min:1'
+    ];
+
     public function question()
     {
         return $this->belongsTo('App\Question');

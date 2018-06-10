@@ -27,6 +27,11 @@ class Question extends Model
      */
     protected $fillable = ['content', 'quizz_id'];
 
+    public static $rules = [
+        'content'   =>  'required',
+        'quizz_id'  =>  'required|numeric|min:1'
+    ];
+
     public function quizz()
     {
         return $this->belongsTo('App\Quizz');

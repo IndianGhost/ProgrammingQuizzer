@@ -29,19 +29,27 @@ Route::get('/admin', 'HomeController@index')->name('admin');
  * CRUD Application : Create post, Read get, Update put, Delete delete
  */
 
-//post request later
-Route::get('admin/quiz/create', 'HomeController@createQuiz')->name('createQuiz');
+Route::group(['prefix'  =>  '/admin'], function(){
 
-Route::get('admin/quiz', 'HomeController@readQuiz')->name('readQuiz');
+    Route::group(['prefix'  =>  '/quiz'], function(){
 
-//put request later
-Route::get('admin/quiz/update/{id}', 'HomeController@updateQuiz')
-    ->where('id', '[0-9]+')
-    ->name('updateQuiz');
+        //post request later
+        Route::get('/create', 'HomeController@createQuiz')->name('createQuiz');
 
-//delete request later
-Route::get('admin/quiz/delete', 'HomeController@deleteQuiz')->name('deleteQuiz');
+        Route::get('/', 'HomeController@readQuiz')->name('readQuiz');
 
-Route::get('admin/quiz/{id}', 'HomeController@questionQuiz')
-	->where('id', '[0-9]+')
-	->name('quizzQuestion');
+        //put request later
+        Route::get('/update/{id}', 'HomeController@updateQuiz')
+            ->where('id', '[0-9]+')
+            ->name('updateQuiz');
+
+        //delete request later
+        Route::get('/delete', 'HomeController@deleteQuiz')->name('deleteQuiz');
+
+        Route::get('/{id}', 'HomeController@questionQuiz')
+            ->where('id', '[0-9]+')
+            ->name('quizzQuestion');
+
+    });
+
+});

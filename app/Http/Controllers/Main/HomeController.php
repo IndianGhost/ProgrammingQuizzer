@@ -25,6 +25,10 @@ class HomeController extends Controller
         $quizz = Quizz::where(strtolower('language'), strtolower($language))
             ->get()
             ->toArray();
+        if($quizz==null)
+        {
+            return redirect( route('home_route') );
+        }
         $quizz = $quizz[0];
         $questions = Question::where('quizz_id', $quizz["id"])
             ->get()
